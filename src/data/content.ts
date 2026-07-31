@@ -5,7 +5,7 @@ export const navItems = [
   { label: "Services", href: "#services" },
   { label: "Works", href: "#works" },
   { label: "About Me", href: "#about" },
-  { label: "Articles", href: "#blog" },
+  { label: "Tools", href: "#tools" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -144,10 +144,6 @@ export const tools = [
         image: "/images/notion.png",
       },
       {
-        name: "Slack",
-        image: "/images/slack.png",
-      },
-      {
         name: "Framer",
         image: "/images/framer.png",
       },
@@ -158,22 +154,6 @@ export const tools = [
       {
         name: "Sketch",
         image: "/images/sketch.png",
-      },
-      {
-        name: "Premiere Pro",
-        image: "/images/premier.png",
-      },
-      {
-        name: "CapCut",
-        image: "/images/capcut.png",
-      },
-      {
-        name: "Audition",
-        image: "/images/audition.png",
-      },
-      {
-        name: "DaVinci Resolve",
-        image: "/images/davinci.png",
       },
     ],
   },

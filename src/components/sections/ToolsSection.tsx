@@ -9,16 +9,15 @@ export function ToolsSection() {
       className="bg-[#111111] px-6 py-24 lg:px-8 lg:py-28"
     >
       <div className="mx-auto max-w-7xl">
-        <SectionHeading
-          eyebrow="Tools"
-          title="The creative stack behind every pixel."
+        <SectionHeading eyebrow="Tools" title="The creative stack behind every pixel." 
+        className="text-center"
         />
 
         <div className="space-y-8">
           {tools.map((group) => (
             <div
               key={group.title}
-              className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-[#0d0d0d] p-8 transition-all duration-500 hover:border-white/20"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d0d] p-8 transition-all duration-500 hover:border-white/20"
             >
               {/* Glow */}
               <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
@@ -44,14 +43,14 @@ export function ToolsSection() {
                   {group.tools.map((tool) => (
                     <div
                       key={tool.name}
-                      className="group/item flex items-center gap-3 rounded-2xl border border-white/10 bg-[#171717] px-5 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-[#1c1c1c]"
+                      className="group/item flex items-center gap-4 rounded-2xl border border-white/10 bg-[#171717] px-5 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-[#1c1c1c]"
                     >
                       <Image
                         src={tool.image}
                         alt={tool.name}
-                        width={36}
-                        height={36}
-                        className="transition duration-300 group-hover/item:scale-110 group-hover/item:rotate-6"
+                        width={100}
+                        height={100}
+                        className="h-12 w-12 transition duration-300 group-hover/item:scale-110 group-hover/item:rotate-6"
                       />
 
                       <span className="font-body font-medium text-white">

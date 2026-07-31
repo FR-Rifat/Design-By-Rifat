@@ -74,7 +74,7 @@ export const stats = [
 
 export const experience = [
   { role: "UI/UX Designer", period: "Feb 2026 — Present", logo: "/images/comp-2.png" },
-  { role: "UI/UX Design Intern", period: "Oct 2025 — Jan 2026", logo: "/images/comp-1.jpeg" },
+  { role: "Intern UI/UX Design", period: "Oct 2025 — Jan 2026", logo: "/images/comp-1.jpeg" },
 ];
 
 export const education = [
@@ -82,16 +82,101 @@ export const education = [
 ];
 
 export const tools = [
-  { name: "FIGMA", image: "/images/figma.png", span: "md:col-span-3" },
-  { name: "ILLUSTRATOR", image: "/images/illustrator.png", span: "md:col-span-2" },
-  { name: "FRAMER", image: "/images/framer.png", span: "md:col-span-3" },
-  { name: "HTML5", image: "/images/html.png", span: "md:col-span-4" },
-  { name: "SKETCH", image: "/images/sketch.png", span: "md:col-span-2" },
-  { name: "NOTION", image: "/images/notion.png", span: "md:col-span-3" },
-  { name: "WEBFLOW", image: "/images/webflow.png", span: "md:col-span-4" },
-  { name: "SLACK", image: "/images/slack.png", span: "md:col-span-3" },
-  { name: "DEVELOPMENT", images: ["/images/wordpress.png", "/images/angular.png", "/images/visual-studio.png", "/images/nextjs.png"], span: "md:col-span-6" },
-  { name: "MOTION", images: ["/images/premier.png", "/images/capcut.png", "/images/audition.png", "/images/davinci.png"], span: "md:col-span-6" },
+  {
+    title: "🎨 Design",
+    description:
+      "Creating intuitive interfaces and engaging user experiences.",
+    tools: [
+      {
+        name: "Figma",
+        image: "/images/figma.png",
+      },
+      {
+        name: "FigJam",
+        image: "/images/figjam.png",
+      },
+      {
+        name: "Photoshop",
+        image: "/images/photoshop.png",
+      },
+      {
+        name: "Illustrator",
+        image: "/images/illustrator.png",
+      },
+    ],
+  },
+
+  {
+    title: "💻 Development",
+    description:
+      "Building modern, responsive, and scalable web experiences.",
+    tools: [
+      {
+        name: "VS Code",
+        image: "/images/visual-studio.png",
+      },
+      {
+        name: "Next.js",
+        image: "/images/nextjs.png",
+      },
+      {
+        name: "HTML5",
+        image: "/images/html.png",
+      },
+      {
+        name: "WordPress",
+        image: "/images/wordpress.png",
+      },
+      {
+        name: "Angular",
+        image: "/images/angular.png",
+      },
+    ],
+  },
+
+  {
+    title: "🚀 Workflow",
+    description:
+      "Collaborating, prototyping, and delivering better products faster.",
+    tools: [
+      {
+        name: "Notion",
+        image: "/images/notion.png",
+      },
+      {
+        name: "Slack",
+        image: "/images/slack.png",
+      },
+      {
+        name: "Framer",
+        image: "/images/framer.png",
+      },
+      {
+        name: "Webflow",
+        image: "/images/webflow.png",
+      },
+      {
+        name: "Sketch",
+        image: "/images/sketch.png",
+      },
+      {
+        name: "Premiere Pro",
+        image: "/images/premier.png",
+      },
+      {
+        name: "CapCut",
+        image: "/images/capcut.png",
+      },
+      {
+        name: "Audition",
+        image: "/images/audition.png",
+      },
+      {
+        name: "DaVinci Resolve",
+        image: "/images/davinci.png",
+      },
+    ],
+  },
 ];
 
 export const processSteps = [

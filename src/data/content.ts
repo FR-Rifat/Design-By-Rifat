@@ -73,12 +73,12 @@ export const stats = [
 ];
 
 export const experience = [
-  { role: "Associate Creative Director", period: "Aug 2023 — Present", logo: "/images/comp-2.png" },
-  { role: "Senior Product Designer", period: "May 2021 — Jun 2023", logo: "/images/comp-1.png" },
+  { role: "UI/UX Designer", period: "Feb 2026 — Present", logo: "/images/comp-2.png" },
+  { role: "UI/UX Design Intern", period: "Oct 2025 — Jan 2026", logo: "/images/comp-1.jpeg" },
 ];
 
 export const education = [
-  { institution: "DSGN School, UK", period: "Aug 2018 — Oct 2022", degree: "MSc in Innovation Design", logo: "/images/alma-2.png" },
+  { institution: "Rumdo Institute of Modern Technology", period: "May 2021 — Dec 2025", degree: "Diploma in CST", logo: "/images/alma-2.png" },
 ];
 
 export const tools = [

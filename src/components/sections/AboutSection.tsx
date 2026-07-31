@@ -61,7 +61,7 @@ export function AboutSection() {
                     key={item.role}
                     className="border-b border-white/10 pb-5 last:border-b-0 last:pb-0"
                   >
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-4">
                       <Image
                         src={item.logo}
                         alt={item.role}
@@ -69,15 +69,17 @@ export function AboutSection() {
                         height={46}
                         className="rounded-full"
                       />
-
-                      <p className="text-sm font-body text-[#a3a3a3]">
+                      <div>
+                         <p className="text-sm font-body text-[#a3a3a3]">
                         {item.period}
                       </p>
-                    </div>
 
-                    <h3 className="mt-3 text-xl font-heading font-semibold text-white">
+                    <h3 className="mt-1 text-xl font-heading font-semibold text-white">
                       {item.role}
                     </h3>
+                    </div>
+                    </div>
+                 
                   </div>
                 ))}
               </div>
@@ -108,7 +110,7 @@ export function AboutSection() {
                         {item.period}
                       </p>
 
-                      <h3 className="mt-2 text-xl font-heading font-semibold text-white">
+                      <h3 className="mt-1 text-xl font-heading font-semibold text-white">
                         {item.degree}
                       </h3>
 

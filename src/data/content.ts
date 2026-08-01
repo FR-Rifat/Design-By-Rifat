@@ -49,6 +49,24 @@ export const projects = [
   { title: "Boxed Water", category: "Visual", image: "/images/portfolio-1.jpg" },
 ];
 
+export const posts = [
+  {
+    title: "Designing for Delight: Small Details",
+    category: "Design",
+    image: "/images/portfolio-6.jpg",
+  },
+  {
+    title: "Responsive Patterns for Modern Layouts",
+    category: "Frontend",
+    image: "/images/portfolio-5.jpg",
+  },
+  {
+    title: "From Research to Prototype: A Case Study",
+    category: "Product",
+    image: "/images/portfolio-4.jpg",
+  },
+];
+
 export const stats = [
   {
     number: 1,
@@ -205,27 +223,45 @@ export const processSteps = [
 
 export const testimonials = [
   {
-    quote: "Extremely professional, unique and enjoyable. The effort taken to ensure relevance to our requirements ensured the optimum outcome.",
+    quote:"Extremely professional, unique and enjoyable. The effort taken to ensure relevance to our requirements ensured the optimum outcome.",
     name: "Andrea De Santis",
     role: "CEO, Agresar Soft Inc.",
     image: "/images/testm-user1.jpg",
   },
+
   {
-    quote: "The experience felt collaborative from start to finish, with thoughtful design decisions and a sharp eye for detail.",
+    quote:"Working together was smooth from start to finish. The design decisions were thoughtful, clear, and focused on the actual user experience.",
     name: "Thomas Luze",
-    role: "Senior Product Developer @ ThisOne",
+    role: "Senior Product Developer",
     image: "/images/testm-user2.jpg",
   },
+
   {
-    quote: "Every component felt crafted for growth and clarity. The final experience made our product feel polished and modern.",
+    quote:"The final product felt polished, modern, and incredibly easy to use. The attention to detail made a huge difference.",
     name: "Mina Alvarez",
     role: "Founder, Northstar Studio",
     image: "/images/testm-user3.jpg",
   },
-];
 
-export const posts = [
-  { title: "The value proposition business branding", category: "Growth", image: "/images/post-img1.jpg" },
-  { title: "15 design tips that always deliver growth", category: "Design", image: "/images/post-img2.jpg" },
-  { title: "Essential social media tips for small business", category: "Growth", image: "/images/post-img3.jpg" },
+  // Later আরো testimonial add করতে পারবে
+  {
+    quote:"Great communication, strong design thinking, and a very clear understanding of our product goals.",
+    name: "Daniel Carter",
+    role: "Product Manager",
+    image: "/images/testm-user1.jpg",
+  },
+
+  {
+    quote: "The entire process was professional and collaborative. The final interface exceeded our expectations.",
+    name: "Sarah Wilson",
+    role: "Creative Director",
+    image: "/images/testm-user2.jpg",
+  },
+
+  {
+    quote:"A strong eye for detail combined with practical UX thinking. I would definitely recommend working together.",
+    name: "Alex Morgan",
+    role: "Founder & CEO",
+    image: "/images/testm-user3.jpg",
+  },
 ];

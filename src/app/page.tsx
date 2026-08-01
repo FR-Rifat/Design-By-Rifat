@@ -7,7 +7,6 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { ToolsSection } from "@/components/sections/ToolsSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
-import { BlogSection } from "@/components/sections/BlogSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function Home() {

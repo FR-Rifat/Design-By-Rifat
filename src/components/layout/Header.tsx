@@ -7,7 +7,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0a0a0a]/80 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between py-4 lg:px-8">
         <Link href="#home" className="flex items-center">
-          <span className="text-xl font-accent font-bold text-white">FR Rifat</span>
+          <span className="text-2xl font-accent font-bold text-white">FR Rifat</span>
         </Link>
         <nav className="hidden items-center gap-8 text-lg font-heading font-medium text-[#a3a3a3] md:flex">
           {navItems.map((item) => (

@@ -124,12 +124,12 @@ export const tools = [
         image: "/images/html.png",
       },
       {
-        name: "WordPress",
-        image: "/images/wordpress.png",
+        name: "CSS3",
+        image: "/images/css.png",
       },
       {
-        name: "Angular",
-        image: "/images/angular.png",
+        name: "WordPress",
+        image: "/images/wordpress.png",
       },
     ],
   },
@@ -142,6 +142,10 @@ export const tools = [
       {
         name: "Notion",
         image: "/images/notion.png",
+      },
+      {
+        name: "Miro",
+        image: "/images/Miro.png",
       },
       {
         name: "Framer",
@@ -161,22 +165,41 @@ export const tools = [
 
 export const processSteps = [
   {
-    number: "1.",
+    number: "01",
     title: "Discover",
-    description: "The goal is to define clear objectives and requirements for the product and gather useful insights.",
-    keywords: ["Stakeholder Interview", "Problem Finding", "Market Research", "Product Positioning", "UX Research"],
+    description:
+      "I start by understanding the problem, users, business goals, and opportunities.",
+    items: [
+      "User Research",
+      "Market Research",
+      "Problem Definition",
+      "User Personas",
+    ],
   },
   {
-    number: "2.",
+    number: "02",
     title: "Design",
-    description: "In this stage, ideas are translated into tangible concepts to align the product with business goals.",
-    keywords: ["Wireframe", "Visual Design", "User Testing", "Validation"],
+    description:
+      "I turn insights into intuitive flows, wireframes, interfaces, and prototypes.",
+    items: [
+      "User Flows",
+      "Wireframing",
+      "UI Design",
+      "Prototyping",
+      "Usability Testing",
+    ],
   },
   {
-    number: "3.",
+    number: "03",
     title: "Deliver",
-    description: "The final phase involves collaborating with developers to build and launch the product.",
-    keywords: ["Project Handover", "Developer Collaboration", "Long Time Support"],
+    description:
+      "I refine, validate, and prepare the final product for development and launch.",
+    items: [
+      "Design Handoff",
+      "Developer Collaboration",
+      "QA & Review",
+      "Design Documentation",
+    ],
   },
 ];
 

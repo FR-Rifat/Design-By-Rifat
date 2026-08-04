@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export function ProcessSection() {
   return (
     <section
-      id="process"
+      id="how-i-work"
       className="relative overflow-hidden bg-[#0a0a0a] px-6 py-24 lg:px-8 lg:py-32"
     >
       {/* Background Glow */}

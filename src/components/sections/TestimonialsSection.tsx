@@ -27,7 +27,7 @@ export function TestimonialsSection() {
         {/* Carousel */}
         <Carousel opts={{ align: "start", loop: true }} plugins={[autoplay]} className="w-full">
           <CarouselContent className="-ml-5">
-            {testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial) => (
               <CarouselItem key={testimonial.name} className="pl-5 md:basis-1/2 lg:basis-1/3">
                 <article className="relative min-h-[300px] overflow-hidden rounded-[1rem] border border-white/8 bg-[#0d0d0d] p-7 transition-colors duration-500 hover:border-white/60 lg:p-8">
 

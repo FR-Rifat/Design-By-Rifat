@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Pacifico, DM_Sans, Geist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { SmoothScroll } from "@/components/SmoothScroll";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -46,6 +47,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-[#0A0A0A] text-white antialiased selection:bg-white selection:text-black">
+        <SmoothScroll />
         {children}
       </body>
     </html>

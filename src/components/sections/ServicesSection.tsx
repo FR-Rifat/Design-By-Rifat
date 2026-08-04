@@ -8,7 +8,7 @@ export function ServicesSection() {
         <SectionHeading eyebrow="What I do" title="Digital Product Design Services I Offer" />
         <div className="grid gap-6 md:grid-cols-2">
           {services.map((service) => (
-            <article key={service.title} className="rounded-3xl border border-white/10 bg-[#111111] p-8">
+            <article key={service.title} className="rounded-[1rem] border border-white/10 bg-[#111111] p-8">
               <div className="flex items-start justify-between gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl text-white">
                   <service.icon/>

@@ -9,7 +9,7 @@ export function ProjectsSection() {
         <SectionHeading eyebrow="Works" title="Featured projects" centered />
         <div className="mt-10 grid gap-6 md:grid-cols-3 xl:grid-cols-2">
           {projects.map((project) => (
-            <article key={project.title} className="group overflow-hidden rounded-3xl border border-white/10 bg-[#0a0a0a]">
+            <article key={project.title} className="group overflow-hidden rounded-[1rem] border border-white/10 bg-[#0a0a0a]">
              <div className="relative aspect-[16/10] overflow-hidden">
                 <Image src={project.image} alt={project.title} fill className="object-cover transition duration-500 group-hover:scale-105"/>
                 <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />

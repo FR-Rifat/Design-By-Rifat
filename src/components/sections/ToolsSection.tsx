@@ -17,7 +17,7 @@ export function ToolsSection() {
           {tools.map((group) => (
             <div
               key={group.title}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0d0d0d] p-8 transition-all duration-500 hover:border-white/20"
+              className="group relative overflow-hidden rounded-[1rem] border border-white/10 bg-[#0d0d0d] p-8 transition-all duration-500 hover:border-white/20"
             >
               {/* Glow */}
               <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
@@ -43,7 +43,7 @@ export function ToolsSection() {
                   {group.tools.map((tool) => (
                     <div
                       key={tool.name}
-                      className="group/item flex items-center gap-4 rounded-2xl border border-white/10 bg-[#171717] px-5 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-[#1c1c1c]"
+                      className="group/item flex items-center gap-4 rounded-[1rem] border border-white/10 bg-[#171717] px-5 py-3 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-[#1c1c1c]"
                     >
                       <Image
                         src={tool.image}

@@ -50,7 +50,7 @@ export function AboutSection() {
           {/* Right Content */}
           <div className="space-y-6">
             {/* Experience */}
-            <div className="rounded-[1.5rem] border border-white/10 bg-[#111111] p-8">
+            <div className="rounded-[1rem] border border-white/10 bg-[#111111] p-8">
               <p className="text-base font-body capitalize text-[#a3a3a3]">
                 Experience
               </p>
@@ -86,7 +86,7 @@ export function AboutSection() {
             </div>
 
             {/* Education */}
-            <div className="rounded-[1.5rem] border border-white/10 bg-[#111111] p-8">
+            <div className="rounded-[1rem] border border-white/10 bg-[#111111] p-8">
               <p className="text-base font-body capitalize text-[#a3a3a3]">
                 Education
               </p>

@@ -53,7 +53,7 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="mt-10 flex flex-col gap-5 sm:flex-row">
-         <Button href="/projects" variant="primary">
+         <Button href="#works" variant="primary">
             View Projects
             </Button>
 

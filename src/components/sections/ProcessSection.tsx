@@ -8,7 +8,7 @@ export function ProcessSection() {
       className="relative overflow-hidden bg-[#0a0a0a] px-6 py-24 lg:px-8 lg:py-32"
     >
       {/* Background Glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-white/[0.025] blur-[140px]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/3 h-125 w-125 -translate-x-1/2 rounded-full bg-white/25 blur-[140px]" />
 
       <div className="relative mx-auto max-w-7xl">
         {/* Heading */}
@@ -61,7 +61,7 @@ export function ProcessSection() {
                 <article
                   className="
                     relative mt-12 overflow-hidden
-                    rounded-[1.75rem]
+                    rounded-[1rem]
                     border border-white/10
                     bg-[#111111]
                     p-7

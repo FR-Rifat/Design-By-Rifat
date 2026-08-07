@@ -132,7 +132,7 @@ function ButtonLink({ href }: { href: string }) {
 
   return (
     <Button href={pathname === "/" ? href : `/${href}`} variant="primary" className="hover:translate-y-0" onClick={handleClick}>
-      How It Works
+      Contact Me
     </Button>
   );
 }

@@ -6,6 +6,7 @@ interface ButtonProps {
   variant?: "primary" | "secondary" | "ghost";
   className?: string;
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  blank?: boolean;
 }
 
 export function Button({
@@ -13,6 +14,7 @@ export function Button({
   children,
   variant = "primary",
   className = "",
+  blank = false,
 }: ButtonProps) {
   const baseClasses =
     "group relative inline-flex items-center justify-center overflow-hidden rounded-full border px-8 py-3 font-heading text-lg font-semibold whitespace-nowrap transition-[background-color,border-color,color,box-shadow] duration-500 ease-out";
@@ -31,7 +33,8 @@ export function Button({
   return (
     <Link
       href={href}
-      className={`${baseClasses} ${variants[variant]} ${className}`}
+      target={blank ? "_blank" : "_self"}
+      className={`${baseClasses} ${variants[variant]} ${className} `  }
     >
       {/* Shine */}
       <span className="absolute inset-0 -translate-x-full skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[200%]" />

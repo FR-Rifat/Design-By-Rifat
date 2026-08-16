@@ -5,13 +5,6 @@ import { Button } from "@/components/ui/Button";
 export default function Hero() {
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#111111] px-6">
-      {/* Background Circles */}
-      {/* <div className="absolute inset-0 flex items-center justify-center">
-        <div className="h-112.5 w-112.5 rounded-full border border-white/5" />
-        <div className="absolute h-175 w-175 rounded-full border border-white/5" />
-        <div className="absolute h-237.5 w-237.5 rounded-full border border-white/3" />
-        <div className="absolute h-300 w-300 rounded-full border border-white/2" />
-      </div> */}
 
       {/* Glow */}
       <div className="absolute h-125 w-125 rounded-full bg-white/5 blur-[180px]" />
@@ -33,7 +26,7 @@ export default function Hero() {
         </div>
 
         {/* Small Title */}
-        <span className="text-lg font-accent font-normal text-neutral-400">
+        <span className="text-lg font-carter font-normal text-neutral-400">
           Hi, I am
         </span>
 

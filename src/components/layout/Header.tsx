@@ -102,7 +102,7 @@ export function Header() {
           ))}
         </nav>
 
-        <ButtonLink href="#how-it-works" />
+        <ButtonLink href="https://cal.com/fr-rifat" />
       </div>
     </header>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Pacifico, DM_Sans, Geist } from "next/font/google";
+import { Carter_One } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { SmoothScroll } from "@/components/SmoothScroll";
@@ -11,6 +12,12 @@ const outfit = Outfit({
   variable: "--font-heading",
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
+});
+
+const carterOne = Carter_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-carter",
 });
 
 const body = DM_Sans({
@@ -43,7 +50,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("scroll-smooth", outfit.variable, body.variable, accent.variable, "font-sans", geist.variable)}
+      className={cn(
+        "scroll-smooth",
+        outfit.variable,
+        body.variable,
+        accent.variable,
+        carterOne.variable,
+        "font-sans",
+        geist.variable,
+      )}
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-[#0A0A0A] text-white antialiased selection:bg-white selection:text-black">

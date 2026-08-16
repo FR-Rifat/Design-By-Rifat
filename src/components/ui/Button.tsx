@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 interface ButtonProps {
-  href: string;
+  href?: string;
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "ghost";
   className?: string;
@@ -10,10 +10,11 @@ interface ButtonProps {
 }
 
 export function Button({
-  href,
+  href = "#",
   children,
   variant = "primary",
   className = "",
+  onClick,
   blank = false,
 }: ButtonProps) {
   const baseClasses =
@@ -34,13 +35,14 @@ export function Button({
     <Link
       href={href}
       target={blank ? "_blank" : "_self"}
-      className={`${baseClasses} ${variants[variant]} ${className} `  }
+      onClick={onClick}
+      className={`${baseClasses} ${variants[variant]} ${className}`}
     >
       {/* Shine */}
-      <span className="absolute inset-0 -translate-x-full skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[200%]" />
+      <span className="absolute inset-0 -translate-x-full skew-x-12 bg-linear-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[200%]" />
 
-      {/* Text */}
-      <span className="relative z-10">
+      {/* Content */}
+      <span className="relative z-10 flex items-center justify-center gap-2">
         {children}
       </span>
     </Link>

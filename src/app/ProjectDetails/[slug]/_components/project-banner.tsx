@@ -1,12 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight, Check, Globe, Share2 } from "lucide-react";
+import { Share2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { projects } from "@/data/content";
 
 type Project = {
   slug: string;

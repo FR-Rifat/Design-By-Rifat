@@ -8,8 +8,8 @@ export function Footer() {
         <div>
           <Image src="/images/logo-symbol.png" alt="Mellow symbol" width={79} height={50} />
           <div className="mt-6 space-y-2 text-[#a3a3a3]">
-            <p>© 2026. Mellow</p>
-            <p>HTML Template by Tansh</p>
+            <p>© 2026. FR Rifat</p>
+            <p></p>
           </div>
         </div>
         <div>

@@ -70,13 +70,13 @@ export function AboutSection() {
                         className="rounded-full"
                       />
                       <div>
+                    <h3 className="mt-1 text-xl font-heading font-semibold text-white">
+                     {item.role}
+                    </h3>
                          <p className="text-sm font-body text-[#a3a3a3]">
                         {item.period}
                       </p>
 
-                    <h3 className="mt-1 text-xl font-heading font-semibold text-white">
-                      {item.role}
-                    </h3>
                     </div>
                     </div>
                  

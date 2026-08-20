@@ -20,14 +20,14 @@ const MoreProjects = () => {
         </div>
 
         {/* Right side: Reusable Button */}
-        <Button href="#" variant="secondary" className="hover:translate-y-0">
+        <Button href="/projects" variant="secondary" className="hover:translate-y-0">
           View All
         </Button>
       </div>
       <div className="grid gap-5 md:grid-cols-3">
         {projects.slice(0, 3).map((project) => (
           <Link
-            href={`/ProjectDetails/${project.slug}`}
+            href={`/projects/${project.slug}`}
             key={project.slug}
             className="group"
           >

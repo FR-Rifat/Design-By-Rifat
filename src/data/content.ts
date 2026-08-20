@@ -40,7 +40,34 @@ export const services = [
   },
 ];
 
-export const projects = [
+export interface Project {
+  slug: string;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  client?: string;
+  location?: string;
+  year?: string;
+  industry?: string;
+  duration?: string;
+  projectType?: string;
+  team?: string;
+  platform?: string;
+  role?: string;
+  services: string[];
+  clientNeed: string;
+  challenge: string;
+  solution: string;
+  outcome: string;
+  tools: string[];
+  clientFeedback: string;
+  liveUrl?: string;
+  figmaUrl?: string;
+  images: string[];
+}
+
+export const projects: Project[] = [
   {
     slug: "care-marketplace",
     title: "Care Marketplace",
@@ -152,9 +179,9 @@ export const projects = [
     liveUrl: "#",
     figmaUrl: "#",
     images: [
-      "/images/project-3.jpg",
-      "/images/project-4.jpg",
-      "/images/project-5.jpg",
+      "/images/portfolio-3.jpg",
+      "/images/portfolio-4.jpg",
+      "/images/portfolio-5.jpg",
     ],
   },
 
@@ -164,7 +191,7 @@ export const projects = [
     category: "Mobile Application",
     description:
       "A mobile-focused IMEI verification experience designed to make device checking faster, clearer, and easier to understand.",
-    image: "/images/project-4.jpg",
+    image: "/images/portfolio-4.jpg",
     client: "Imoscan",
     location: "United States",
     year: "2025",
@@ -186,6 +213,99 @@ export const projects = [
       "/images/portfolio-4.jpg",
       "/images/portfolio-5.jpg",
       "/images/portfolio-6.jpg",
+    ],
+  },
+
+  {
+    slug: "fintech-dashboard",
+    title: "Fintech Analytics Dashboard",
+    category: "SaaS Dashboard",
+    description:
+      "An intuitive financial analytics platform offering real-time transaction insights, balance monitoring, and automated reporting.",
+    image: "/images/portfolio-5.jpg",
+    client: "Fintech Analytics",
+    location: "United States",
+    year: "2025",
+    services: ["Dashboard Design", "UX/UI Design", "SaaS Product"],
+    clientNeed:
+      "The client required a powerful financial dashboard to visualize complex transaction metrics and real-time balance trends effortlessly.",
+    challenge:
+      "Structuring high-density data views without cluttering the screen or overwhelming financial analysts.",
+    solution:
+      "Designed customizable widget layouts, interactive chart components, and clean dark-mode visuals.",
+    outcome:
+      "Significantly improved daily workspace efficiency for finance managers and key decision-makers.",
+    tools: ["Figma", "Photoshop", "Next.js"],
+    clientFeedback:
+      "The dashboard visuals are outstanding and data clarity is at an all-time high.",
+    liveUrl: "#",
+    figmaUrl: "#",
+    images: [
+      "/images/portfolio-5.jpg",
+      "/images/portfolio-6.jpg",
+      "/images/portfolio-1.jpg",
+    ],
+  },
+
+  {
+    slug: "health-fitness-app",
+    title: "Health & Fitness Tracker",
+    category: "Mobile Application",
+    description:
+      "A personal health companion tracking workouts, nutrition goals, and daily wellness habits with interactive progress charts.",
+    image: "/images/portfolio-6.jpg",
+    client: "HealthPulse",
+    location: "United States",
+    year: "2025",
+    services: ["Mobile App Design", "UX/UI Design", "Prototyping"],
+    clientNeed:
+      "To build a modern iOS and Android fitness experience that motivates daily user activity through simple logging.",
+    challenge:
+      "Keeping exercise tracking quick while maintaining detailed statistics and streak gamification.",
+    solution:
+      "Implemented fluid gesture-based interactions, micro-animations, and minimal form inputs.",
+    outcome:
+      "Enhanced user retention and created a highly engaging mobile habit tracker.",
+    tools: ["Figma", "FigJam", "Framer"],
+    clientFeedback:
+      "Clean visual design combined with smooth micro-interactions. Users love using it every day.",
+    liveUrl: "#",
+    figmaUrl: "#",
+    images: [
+      "/images/portfolio-6.jpg",
+      "/images/portfolio-1.jpg",
+      "/images/portfolio-2.jpg",
+    ],
+  },
+
+  {
+    slug: "ecommerce-design-system",
+    title: "E-Commerce System",
+    category: "Web Design",
+    description:
+      "A conversion-focused online retail platform built for seamless product exploration and rapid checkout flows.",
+    image: "/images/portfolio-1.jpg",
+    client: "Retail Next",
+    location: "United States",
+    year: "2025",
+    services: ["Web Design", "E-Commerce UI", "Design System"],
+    clientNeed:
+      "Upgrade an outdated online store into a premium digital shopping experience with custom product filters.",
+    challenge:
+      "Balancing high-resolution catalog visuals with fast navigation performance and intuitive cart management.",
+    solution:
+      "Created modular product grids, sticky checkout drawers, and accessible color themes.",
+    outcome:
+      "Drove measurable increases in visitor conversion rates and average order values.",
+    tools: ["Figma", "Photoshop", "Webflow"],
+    clientFeedback:
+      "The overall shopping experience feels world-class and effortless for our customers.",
+    liveUrl: "#",
+    figmaUrl: "#",
+    images: [
+      "/images/portfolio-1.jpg",
+      "/images/portfolio-2.jpg",
+      "/images/portfolio-3.jpg",
     ],
   },
 ];

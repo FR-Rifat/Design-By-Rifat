@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { ArrowLeft, Home, Compass, Sparkles } from "lucide-react";
-import { Header } from "@/components/layout/Header";
+import { ArrowLeft, Home, Compass } from "lucide-react";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 
@@ -80,7 +79,7 @@ export default function NotFound() {
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               className="relative"
             >
-              <h1 className="font-heading text-8xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-neutral-300 to-neutral-700/60 sm:text-[11rem] md:text-[14rem] leading-none drop-shadow-[0_20px_50px_rgba(255,255,255,0.08)]">
+              <h1 className="font-heading text-8xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-linear-to-b from-white via-neutral-300 to-neutral-700/60 sm:text-[11rem] md:text-[14rem] leading-none drop-shadow-[0_20px_50px_rgba(255,255,255,0.08)]">
                 404
               </h1>
               

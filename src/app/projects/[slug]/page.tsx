@@ -33,7 +33,7 @@ const page = async ({ params }: ProjectPageProps) => {
       <Challenges project={project} />
       <Gallery project={project} />
       <Toolstack project={project} />
-      <MoreProjects/>
+      <MoreProjects currentSlug={project.slug} />
       <Footer />
     </div>
   );

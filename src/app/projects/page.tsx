@@ -10,9 +10,10 @@ export default function ProjectsPage() {
       <Header />
       <main className="bg-[#111111] px-6 py-24 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-10 flex items-center justify-center">
+          <div className="flex items-center justify-center">
             <SectionHeading
-              title="All projects"
+              title="Explore My Work"
+              description="A showcase of my best UI/UX design and development projects. Each case study highlights the design process, challenges, and solutions that led to successful outcomes."
             />
           </div>
 

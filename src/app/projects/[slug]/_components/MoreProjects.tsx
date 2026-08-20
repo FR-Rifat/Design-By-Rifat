@@ -4,7 +4,15 @@ import { projects } from "@/data/content";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Button } from "@/components/ui/Button";
 
-const MoreProjects = () => {
+interface MoreProjectsProps {
+  currentSlug?: string;
+}
+
+const MoreProjects = ({ currentSlug }: MoreProjectsProps) => {
+  const filteredProjects = projects
+    .filter((project) => project.slug !== currentSlug)
+    .slice(0, 3);
+
   return (
     <div className="mx-auto max-w-7xl py-10 lg:py-14 space-y-10">
       <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
@@ -25,7 +33,7 @@ const MoreProjects = () => {
         </Button>
       </div>
       <div className="grid gap-5 md:grid-cols-3">
-        {projects.slice(0, 3).map((project) => (
+        {filteredProjects.map((project) => (
           <Link
             href={`/projects/${project.slug}`}
             key={project.slug}
@@ -44,7 +52,7 @@ const MoreProjects = () => {
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
 
                 <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <p className="font-body text- text-[#999999]">
+                  <p className="font-body text-sm text-[#999999]">
                     {project.category}
                   </p>
 

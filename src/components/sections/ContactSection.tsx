@@ -18,7 +18,7 @@ export function ContactSection() {
               </motion.div>
 
               <div className="max-w-3xl">
-                <p className="font-accent text-xs capitalize text-[#a3a3a3] sm:text-sm">
+                <p className="font-carter text-sm capitalize text-[#a3a3a3] sm:text-base">
                   Contact Me
                 </p>
 

@@ -22,21 +22,36 @@ export const services = [
     description:
       "Designing modern, responsive, and conversion-focused websites that deliver seamless experiences across all devices.",
     icon: MonitorSmartphone,
-    tags: ["Landing Pages", "Responsive Design", "SaaS Websites", "Website Redesign"],
+    tags: [
+      "Landing Pages",
+      "Responsive Design",
+      "SaaS Websites",
+      "Website Redesign",
+    ],
   },
   {
     title: "Product Design",
     description:
       "Transforming ideas into scalable digital products by combining business goals, user needs, and exceptional user experiences.",
     icon: Boxes,
-    tags: ["Product Strategy", "Mobile App Design", "MVP Design", "Dashboard Design"],
+    tags: [
+      "Product Strategy",
+      "Mobile App Design",
+      "MVP Design",
+      "Dashboard Design",
+    ],
   },
   {
     title: "Design Consultation",
     description:
       "Helping businesses improve their digital products through UX audits, design strategy, and actionable recommendations.",
     icon: Lightbulb,
-    tags: ["UX Audits", "Conversion Optimization", "Accessibility", "Design Strategy"],
+    tags: [
+      "UX Audits",
+      "Conversion Optimization",
+      "Accessibility",
+      "Design Strategy",
+    ],
   },
 ];
 
@@ -352,19 +367,39 @@ export const stats = [
 ];
 
 export const experience = [
-  { role: "UI/UX Designer", period: "Feb 2026 — Present", logo: "/images/comp-2.png" },
-  { role: "Intern UI/UX Design", period: "Oct 2025 — Jan 2026", logo: "/images/comp-1.jpeg" },
+  {
+    company: "Tyrand",
+    role: "UI/UX Designer",
+    period: "Apr 2026 — Present",
+    logo: "/images/comp-2.png",
+  },
+  {
+    company: "ScaleUp Ads Agency",
+    role: "Jr. UI/UX Designer",
+    period: "Dec 2025 — Sep 2026",
+    logo: "/images/comp-1.jpeg",
+  },
+  {
+    company: "BDCalling Academy",
+    role: "Intern UI/UX Designer",
+    period: "Sep 2025 — Nov 2025",
+    logo: "/images/comp-1.jpeg",
+  },
 ];
 
 export const education = [
-  { institution: "Rumdo Institute of Modern Technology", period: "May 2021 — Dec 2025", degree: "Diploma in CST", logo: "/images/alma-2.png" },
+  {
+    institution: "Rumdo Institute of Modern Technology",
+    period: "May 2021 — Dec 2025",
+    degree: "Diploma in CST",
+    logo: "/images/alma-2.png",
+  },
 ];
 
 export const tools = [
   {
     title: "🎨 Design",
-    description:
-      "Creating intuitive interfaces and engaging user experiences.",
+    description: "Creating intuitive interfaces and engaging user experiences.",
     tools: [
       {
         name: "Figma",
@@ -387,8 +422,7 @@ export const tools = [
 
   {
     title: "💻 Development",
-    description:
-      "Building modern, responsive, and scalable web experiences.",
+    description: "Building modern, responsive, and scalable web experiences.",
     tools: [
       {
         name: "VS Code",
@@ -484,21 +518,24 @@ export const processSteps = [
 
 export const testimonials = [
   {
-    quote:"Extremely professional, unique and enjoyable. The effort taken to ensure relevance to our requirements ensured the optimum outcome.",
+    quote:
+      "Extremely professional, unique and enjoyable. The effort taken to ensure relevance to our requirements ensured the optimum outcome.",
     name: "Andrea De Santis",
     role: "CEO, Agresar Soft Inc.",
     image: "/images/testm-user1.jpg",
   },
 
   {
-    quote:"Working together was smooth from start to finish. The design decisions were thoughtful, clear, and focused on the actual user experience.",
+    quote:
+      "Working together was smooth from start to finish. The design decisions were thoughtful, clear, and focused on the actual user experience.",
     name: "Thomas Luze",
     role: "Senior Product Developer",
     image: "/images/testm-user2.jpg",
   },
 
   {
-    quote:"The final product felt polished, modern, and incredibly easy to use. The attention to detail made a huge difference.",
+    quote:
+      "The final product felt polished, modern, and incredibly easy to use. The attention to detail made a huge difference.",
     name: "Mina Alvarez",
     role: "Founder, Northstar Studio",
     image: "/images/testm-user3.jpg",
@@ -506,21 +543,24 @@ export const testimonials = [
 
   // Later আরো testimonial add করতে পারবে
   {
-    quote:"Great communication, strong design thinking, and a very clear understanding of our product goals.",
+    quote:
+      "Great communication, strong design thinking, and a very clear understanding of our product goals.",
     name: "Daniel Carter",
     role: "Product Manager",
     image: "/images/testm-user1.jpg",
   },
 
   {
-    quote: "The entire process was professional and collaborative. The final interface exceeded our expectations.",
+    quote:
+      "The entire process was professional and collaborative. The final interface exceeded our expectations.",
     name: "Sarah Wilson",
     role: "Creative Director",
     image: "/images/testm-user2.jpg",
   },
 
   {
-    quote:"A strong eye for detail combined with practical UX thinking. I would definitely recommend working together.",
+    quote:
+      "A strong eye for detail combined with practical UX thinking. I would definitely recommend working together.",
     name: "Alex Morgan",
     role: "Founder & CEO",
     image: "/images/testm-user3.jpg",

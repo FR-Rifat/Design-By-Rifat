@@ -33,10 +33,7 @@ export function AboutSection() {
                   className="rounded-[1rem] border border-white/10 bg-[#111111] p-4 transition-all duration-300 hover:border-white/20"
                 >
                   <p className="text-center font-heading text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-                    <CountNumber
-                      end={stat.number}
-                      suffix={stat.suffix}
-                    />
+                    <CountNumber end={stat.number} suffix={stat.suffix} />
                   </p>
 
                   <p className="mt-2 text-center font-body text-xs text-[#a3a3a3] sm:text-sm">
@@ -58,22 +55,34 @@ export function AboutSection() {
               <div className="mt-6 space-y-5">
                 {experience.map((item) => (
                   <div
-                    key={item.role}
-                    className="border-b border-white/10 pb-5 last:border-b-0 last:pb-0"
+                    key={`${item.company}-${item.role}`}
+                    className="group border-b border-white/10 pb-5 last:border-b-0 last:pb-0"
                   >
-                    <div className="flex items-center gap-4">
-                      <Image
-                        src={item.logo}
-                        alt={item.role}
-                        width={46}
-                        height={46}
-                        className="h-10 w-10 rounded-full sm:h-11 sm:w-11"
-                      />
-                      <div>
-                        <h3 className="mt-1 font-heading text-lg font-semibold text-white sm:text-xl">
-                          {item.role}
-                        </h3>
-                        <p className="font-body text-xs text-[#a3a3a3] sm:text-sm">
+                    <div className="flex items-center justify-between gap-6">
+                      {/* Company + Role */}
+                      <div className="flex min-w-0 items-center gap-4">
+                        <Image
+                          src={item.logo}
+                          alt={item.company}
+                          width={46}
+                          height={46}
+                          className="h-10 w-10 shrink-0 rounded-full object-cover sm:h-11 sm:w-11"
+                        />
+
+                        <div className="min-w-0">
+                          <h3 className="font-heading text-lg font-semibold leading-tight text-white sm:text-xl">
+                            {item.company}
+                          </h3>
+
+                          <p className="mt-1 font-body text-sm text-[#a3a3a3] sm:text-[15px]">
+                            {item.role}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Period */}
+                      <div className="shrink-0 text-right">
+                        <p className="font-body text-xs font-medium uppercase tracking-wide text-[#737373] sm:text-sm">
                           {item.period}
                         </p>
                       </div>
@@ -91,10 +100,7 @@ export function AboutSection() {
 
               <div className="mt-6">
                 {education.map((item) => (
-                  <div
-                    key={item.degree}
-                    className="flex items-start gap-3"
-                  >
+                  <div key={item.degree} className="flex items-start gap-3">
                     <Image
                       src={item.logo}
                       alt={item.institution}

@@ -8,6 +8,7 @@ import { PageLoader } from "@/components/layout/PageLoader";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { Header } from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { BackToTop } from "@/components/ui/BackToTop";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -72,6 +73,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

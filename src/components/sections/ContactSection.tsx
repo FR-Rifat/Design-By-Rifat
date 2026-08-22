@@ -5,28 +5,28 @@ import { Button } from "@/components/ui/Button";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="bg-[#111111] px-6 py-20 lg:px-8 lg:py-24">
+    <section id="contact" className="bg-[#111111] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="rounded-[1rem] border border-white/10 bg-[#0a0a0a] px-8 py-8 lg:px-10 lg:py-9">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+        <div className="rounded-[1rem] border border-white/10 bg-[#0a0a0a] p-6 sm:p-8 lg:px-10 lg:py-9">
+          <div className="flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-center lg:justify-between">
             
             {/* Left Content */}
-            <div className="flex items-center gap-10">
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-8 lg:gap-10">
               {/* Animated Hand */}
-              <motion.div animate={{ rotate: [0, 15, -10, 15, 0] }} transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }} className="origin-bottom text-5xl sm:text-6xl">
+              <motion.div animate={{ rotate: [0, 15, -10, 15, 0] }} transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }} className="origin-bottom text-4xl sm:text-6xl">
                 👋
               </motion.div>
 
               <div className="max-w-3xl">
-                <p className="font-accent text-sm capatalize text-[#a3a3a3]">
+                <p className="font-accent text-xs capitalize text-[#a3a3a3] sm:text-sm">
                   Contact Me
                 </p>
 
-                <h3 className="mt-3 font-heading text-3xl font-semibold capitalize text-white sm:text-4xl">
+                <h3 className="mt-2 font-heading text-2xl font-semibold capitalize text-white sm:mt-3 sm:text-3xl lg:text-4xl">
                   Let&apos;s talk about your project
                 </h3>
 
-                <p className="mt-3 max-w-3xl font-body text-base leading-7 text-[#8f8f8f] sm:text-lg">
+                <p className="mt-2 max-w-3xl font-body text-sm leading-6 text-[#8f8f8f] sm:mt-3 sm:text-base sm:leading-7 lg:text-lg">
                   Ready to stand out? Let&apos;s create a powerful visual narrative that cuts through the noise and defines your brand&apos;s presence. I&apos;m just a call away.
                 </p>
               </div>
@@ -34,7 +34,7 @@ export function ContactSection() {
 
             {/* Existing Button */}
             <div className="shrink-0 lg:ml-8">
-              <Button href="/contact" variant="primary">
+              <Button href="/contact" variant="primary" className="w-full text-center sm:w-auto">
                 Get In Touch
               </Button>
             </div>

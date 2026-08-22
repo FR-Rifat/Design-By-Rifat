@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
@@ -25,7 +23,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-[#a3a3a3]">
-      <Header />
       <main>
         <HeroSection />
         <ServicesSection />
@@ -36,7 +33,6 @@ export default function Home() {
         <TestimonialsSection />
         <ContactSection />
       </main>
-      <Footer />
     </div>
   );
 }

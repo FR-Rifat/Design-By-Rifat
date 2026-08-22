@@ -11,9 +11,9 @@ interface SectionHeadingProps {
 export function SectionHeading({ eyebrow, title, description, centered = false, className = "" }: SectionHeadingProps) {
   return (
     <div className={cn("mb-10 max-w-7xl", centered && "mx-auto text-center", className)}>
-      {eyebrow ? <p className="mb-2 text-xl font-carter capitalize text-[#a3a3a3]">{eyebrow}</p> : null}
-      <h2 className="text-3xl font-heading text-center capitalize font-semibold text-white sm:text-4xl lg:text-[2.6rem]">{title}</h2>
-      {description ? <p className="mt-4 mx-40 text-center text-lg text-[#a3a3a3]">{description}</p> : null}
+      {eyebrow ? <p className={cn("mb-2 text-lg sm:text-xl font-carter capitalize text-[#a3a3a3]", centered && "text-center")}>{eyebrow}</p> : null}
+      <h2 className={cn("text-2xl font-heading capitalize font-semibold text-white sm:text-3xl lg:text-[2.6rem] leading-tight", centered && "text-center")}>{title}</h2>
+      {description ? <p className={cn("mt-4 max-w-2xl text-base sm:text-lg text-[#a3a3a3]", centered && "text-center")}>{description}</p> : null}
     </div>
   );
 }

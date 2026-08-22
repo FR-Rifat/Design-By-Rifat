@@ -97,13 +97,15 @@ function PageLoaderContent() {
       const href = target.getAttribute("href");
       if (!href) return;
 
-      // Ignore external links, mailto, tel, target="_blank"
+      // Ignore external links, mailto, tel, target="_blank", hash links
       if (
         target.target === "_blank" ||
         href.startsWith("http://") ||
         href.startsWith("https://") ||
         href.startsWith("mailto:") ||
-        href.startsWith("tel:")
+        href.startsWith("tel:") ||
+        href.startsWith("#") ||
+        href === "#"
       ) {
         return;
       }

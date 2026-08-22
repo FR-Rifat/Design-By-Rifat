@@ -15,18 +15,18 @@ const Gallery = ({ project }: GalleryProps) => {
   return (
     <section
       id="gallery"
-      className="border-b border-white/10 bg-[#0A0A0D] px-6 py-24 lg:px-12 lg:py-32"
+      className="border-b border-white/10 bg-[#0A0A0D] px-4 py-12 sm:px-6 sm:py-20 lg:px-12 lg:py-32"
     >
-      <div className="mx-auto max-w-7xl space-y-10">
+      <div className="mx-auto max-w-7xl space-y-8 sm:space-y-10">
         {/* Header */}
         <div className="flex items-end justify-between gap-6">
           <div className="space-y-2">
             <div>
-              <h2 className="font-heading text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              <h2 className="font-heading text-2xl font-semibold tracking-tight text-white sm:text-4xl lg:text-6xl">
                 Inside the Design
               </h2>
 
-              <p className="mt-3 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+              <p className="mt-2 max-w-2xl font-body text-sm leading-relaxed text-zinc-400 sm:mt-3 sm:text-base lg:text-lg">
                 High resolution UI screens, design patterns, and interface
                 details.
               </p>
@@ -45,7 +45,7 @@ const Gallery = ({ project }: GalleryProps) => {
             >
               <div
                 className={`relative w-full overflow-hidden bg-[#111114] ${
-                  index === 0 ? "aspect-16/8" : "aspect-4/3"
+                  index === 0 ? "aspect-4/3 sm:aspect-16/8" : "aspect-4/3"
                 }`}
               >
                 <Image

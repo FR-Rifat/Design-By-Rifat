@@ -9,17 +9,17 @@ const Overview = ({ clientNeed, services = [] }: OverviewProps) => {
   return (
     <section
       id="overview"
-      className="border-b border-white/10 px-6 py-24 lg:px-12 lg:py-32"
+      className="border-b border-white/10 px-4 py-12 sm:px-6 sm:py-20 lg:px-12 lg:py-32"
     >
       <div className="mx-auto max-w-7xl space-y-8">
         {/* Section Header */}
         <div className="space-y-2">
 
-          <h2 className="font-heading text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+          <h2 className="font-heading text-2xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
             Project Overview & Client Need
           </h2>
 
-          <p className="text-base text-zinc-400 sm:text-lg">
+          <p className="font-body text-sm text-zinc-400 sm:text-base lg:text-lg">
             Understanding the core purpose, user requirements, and product
             goals.
           </p>

@@ -5,7 +5,7 @@ export function ProcessSection() {
   return (
     <section
       id="how-i-work"
-      className="relative overflow-hidden bg-[#0a0a0a] px-6 py-24 lg:px-8 lg:py-32"
+      className="relative overflow-hidden bg-[#0a0a0a] px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32"
     >
       {/* Background Glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/3 h-125 w-125 -translate-x-1/2 rounded-full bg-white/25 blur-[140px]" />
@@ -17,24 +17,20 @@ export function ProcessSection() {
         </div>
 
         {/* Process */}
-        <div className="relative mt-16">
+        <div className="relative mt-12 sm:mt-16">
           {/* Connecting Line */}
           <div className="pointer-events-none absolute left-[16%] right-[16%] top-6 hidden h-px bg-white/10 md:block" />
 
           <div className="grid gap-10 md:grid-cols-3 md:gap-8">
             {processSteps.map((step) => (
               <div key={step.number} className="group relative">
-                {/* ============================= */}
                 {/* Process Indicator */}
-                {/* ============================= */}
-
                 <div className="relative z-10 flex flex-col items-center">
                   {/* Circle */}
                   <div
                     className="
                       flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-[#0a0a0a] font-body text-sm font-semibold text-[#777]
                       transition-all duration-500
-                      
                       group-hover:border-white
                       group-hover:bg-white
                       group-hover:text-[#0a0a0a]
@@ -48,26 +44,24 @@ export function ProcessSection() {
                   <span
                     className="
                       mt-3
-                      font-body text-xs uppercase  text-[#666] transition-all duration-500 group-hover:text-white "
+                      font-body text-xs uppercase text-[#666] transition-all duration-500 group-hover:text-white"
                   >
                     {step.title}
                   </span>
                 </div>
 
-                {/* ============================= */}
                 {/* Card */}
-                {/* ============================= */}
-
                 <article
                   className="
-                    relative mt-12 overflow-hidden
+                    relative mt-8 overflow-hidden
                     rounded-[1rem]
                     border border-white/10
                     bg-[#111111]
-                    p-7
+                    p-6
                     transition-all duration-500
+                    sm:mt-12
+                    sm:p-7
                     md:p-8
-                    
                     group-hover:-translate-y-2
                     group-hover:border-white/20
                     group-hover:bg-[#131313]
@@ -101,20 +95,20 @@ export function ProcessSection() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="mt-10 font-heading text-3xl font-semibold tracking-tight text-white">
+                    <h3 className="mt-6 font-heading text-2xl font-semibold tracking-tight text-white sm:mt-10 sm:text-3xl">
                       {step.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="mt-5 min-h-[84px] font-body text-[15px] leading-7 text-[#9ca3af]">
+                    <p className="mt-4 font-body text-sm leading-7 text-[#9ca3af] sm:mt-5 sm:min-h-[84px] sm:text-[15px]">
                       {step.description}
                     </p>
 
                     {/* Divider */}
-                    <div className="my-7 h-px bg-white/10 transition-colors duration-300 group-hover:bg-white/20" />
+                    <div className="my-6 h-px bg-white/10 transition-colors duration-300 group-hover:bg-white/20 sm:my-7" />
 
                     {/* What I Do */}
-                    <p className="mb-4 font-accent text-xs font-medium capitalize tracking-[0.18em] text-[#666]">
+                    <p className="mb-3 font-accent text-xs font-medium capitalize tracking-[0.18em] text-[#666] sm:mb-4">
                       What I Do
                     </p>
 
@@ -124,7 +118,7 @@ export function ProcessSection() {
                         <span
                           key={item}
                           className="
-                            rounded-full border border-white/10 bg-white/[0.025] px-3.5 py-2 font-body font-semibold text-xs text-[#9ca3af] transition-all duration-300 group-hover:border-white/15 group-hover:text-[#d4d4d4]"
+                            rounded-full border border-white/10 bg-white/[0.025] px-3 py-1.5 font-body text-xs font-semibold text-[#9ca3af] transition-all duration-300 group-hover:border-white/15 group-hover:text-[#d4d4d4] sm:px-3.5 sm:py-2"
                         >
                           {item}
                         </span>
@@ -134,7 +128,7 @@ export function ProcessSection() {
                     {/* Bottom Line */}
                     <div
                       className="
-                        mt-8 h-px w-0  bg-white transition-all duration-700 group-hover:w-full"
+                        mt-6 h-px w-0 bg-white transition-all duration-700 group-hover:w-full sm:mt-8"
                     />
                   </div>
                 </article>

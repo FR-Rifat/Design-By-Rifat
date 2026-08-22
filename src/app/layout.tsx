@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { PageLoader } from "@/components/layout/PageLoader";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
+import { Header } from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -67,7 +69,9 @@ export default function RootLayout({
         <ScrollProgress />
         <PageLoader />
         <SmoothScroll />
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

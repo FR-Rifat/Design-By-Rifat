@@ -5,20 +5,22 @@ interface ButtonProps {
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "ghost";
   className?: string;
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>;
   blank?: boolean;
+  type?: "button" | "submit" | "reset";
 }
 
 export function Button({
-  href = "#",
+  href,
   children,
   variant = "primary",
   className = "",
   onClick,
   blank = false,
+  type = "button",
 }: ButtonProps) {
   const baseClasses =
-    "group relative inline-flex items-center justify-center overflow-hidden rounded-full border px-8 py-3 font-heading text-lg font-semibold whitespace-nowrap transition-[background-color,border-color,color,box-shadow] duration-500 ease-out";
+    "group relative inline-flex items-center justify-center overflow-hidden rounded-full border px-8 py-3 font-heading text-lg font-semibold whitespace-nowrap transition-[background-color,border-color,color,box-shadow] duration-500 ease-out cursor-pointer";
 
   const variants = {
     primary:
@@ -31,13 +33,8 @@ export function Button({
       "border-white/20 bg-white/10 text-white hover:bg-white/20 hover:border-white/40",
   };
 
-  return (
-    <Link
-      href={href}
-      target={blank ? "_blank" : "_self"}
-      onClick={onClick}
-      className={`${baseClasses} ${variants[variant]} ${className}`}
-    >
+  const content = (
+    <>
       {/* Shine */}
       <span className="absolute inset-0 -translate-x-full skew-x-12 bg-linear-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[200%]" />
 
@@ -45,6 +42,29 @@ export function Button({
       <span className="relative z-10 flex items-center justify-center gap-2">
         {children}
       </span>
-    </Link>
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        target={blank ? "_blank" : "_self"}
+        onClick={onClick as React.MouseEventHandler<HTMLAnchorElement>}
+        className={`${baseClasses} ${variants[variant]} ${className}`}
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button
+      type={type}
+      onClick={onClick as React.MouseEventHandler<HTMLButtonElement>}
+      className={`${baseClasses} ${variants[variant]} ${className}`}
+    >
+      {content}
+    </button>
   );
 }

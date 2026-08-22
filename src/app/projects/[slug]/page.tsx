@@ -27,14 +27,12 @@ const page = async ({ params }: ProjectPageProps) => {
 
   return (
     <div>
-      <Header />
       <ProjectBanner project={project} />
       <Overview clientNeed={project.clientNeed} services={project.services} />
       <Challenges project={project} />
       <Gallery project={project} />
       <Toolstack project={project} />
       <MoreProjects currentSlug={project.slug} />
-      <Footer />
     </div>
   );
 }

@@ -84,14 +84,14 @@ export function ProjectBanner({ project }: ProjectBannerProps) {
   };
 
   return (
-    <section className="relative overflow-hidden border-b border-white/8 bg-[#0a0a0a] px-5 pb-14 pt-8 sm:px-6 sm:pb-20 sm:pt-24 lg:px-8 lg:pb-28 lg:pt-12">
+    <section className="relative overflow-hidden border-b border-white/8 bg-[#0a0a0a] px-4 pb-12 pt-6 sm:px-6 sm:pb-20 sm:pt-12 lg:px-8 lg:pb-28">
       <div className="relative mx-auto max-w-7xl">
         {/* Top Navigation */}
         <div className="flex items-center justify-between gap-4">
           <Button
             href="/#works"
             variant="secondary"
-            className="px-4 py-3! text-base! font-light!"
+            className="px-4 py-3! text-sm! sm:text-base! font-light!"
           >
             Back to Work
           </Button>
@@ -99,7 +99,7 @@ export function ProjectBanner({ project }: ProjectBannerProps) {
           <Button
             onClick={handleCopyLink}
             variant="ghost"
-            className="px-4 py-3! text-base font-light! capitalize sm:text-base"
+            className="px-4 py-3! text-sm! sm:text-base font-light! capitalize"
           >
             {copiedLink ? (
               <>
@@ -115,7 +115,7 @@ export function ProjectBanner({ project }: ProjectBannerProps) {
         </div>
 
         {/* Hero Content */}
-        <div className="mt-14  ">
+        <div className="mt-8 sm:mt-14">
           {/* Left Content */}
           <div className="lg:col-span-8">
             <motion.div
@@ -134,11 +134,11 @@ export function ProjectBanner({ project }: ProjectBannerProps) {
                 delay: 0.05,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="mt-7 max-w-5xl font-heading text-8xl font-semibold leading-[0.92] text-white"
+              className="mt-4 max-w-5xl font-heading text-3xl font-semibold leading-tight text-white sm:mt-7 sm:text-5xl md:text-7xl lg:text-8xl"
             >
               {project.title}
             </motion.h1>
-            <div className="flex justify-between items-center">
+            <div className="mt-6 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               {/* Description */}
               <motion.p
                 initial={{ opacity: 0, y: 18 }}
@@ -147,7 +147,7 @@ export function ProjectBanner({ project }: ProjectBannerProps) {
                   duration: 0.6,
                   delay: 0.15,
                 }}
-                className="mt-8 max-w-2xl font-body text-base text-white/45 sm:text-lg"
+                className="max-w-2xl font-body text-base text-white/45 sm:text-lg"
               >
                 {project.description}
               </motion.p>
@@ -160,18 +160,18 @@ export function ProjectBanner({ project }: ProjectBannerProps) {
                   duration: 0.6,
                   delay: 0.2,
                 }}
-                className="lg:col-span-4"
+                className="shrink-0"
               >
                 {(project.liveUrl && project.liveUrl !== "#") ||
                 (project.figmaUrl && project.figmaUrl !== "#") ? (
-                  <div className="flex flex-wrap items-center justify-end gap-3">
+                  <div className="flex flex-wrap items-center gap-3 lg:justify-end">
                     {/* View Live */}
                     {project.liveUrl && project.liveUrl !== "#" && (
                       <Button
                         href={project.liveUrl}
                         blank
                         variant="primary"
-                        className="px-6 py-3 text-sm"
+                        className="px-5 py-2.5 text-xs sm:px-6 sm:py-3 sm:text-sm"
                       >
                         View Live
                       </Button>
@@ -183,7 +183,7 @@ export function ProjectBanner({ project }: ProjectBannerProps) {
                         href={project.figmaUrl}
                         blank
                         variant="secondary"
-                        className="px-6 py-3 text-sm"
+                        className="px-5 py-2.5 text-xs sm:px-6 sm:py-3 sm:text-sm"
                       >
                         View Figma
                       </Button>
@@ -204,7 +204,7 @@ export function ProjectBanner({ project }: ProjectBannerProps) {
             delay: 0.3,
             ease: [0.16, 1, 0.3, 1],
           }}
-          className="mt-10 overflow-hidden rounded-md border border-white/10 bg-white/2.5 backdrop-blur-xl"
+          className="mt-8 overflow-hidden rounded-md border border-white/10 bg-white/2.5 backdrop-blur-xl sm:mt-10"
         >
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
             <MetaCard label="Industry" value={project.industry || "—"} />
@@ -225,10 +225,10 @@ export function ProjectBanner({ project }: ProjectBannerProps) {
             delay: 0.4,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="group relative mt-8 overflow-hidden rounded-md border border-white/10 bg-[#111111] shadow-[0_30px_100px_rgba(0,0,0,0.45)] sm:mt-10"
+          className="group relative mt-6 overflow-hidden rounded-md border border-white/10 bg-[#111111] shadow-[0_30px_100px_rgba(0,0,0,0.45)] sm:mt-10"
         >
           {/* Image */}
-          <div className="relative aspect-16/10 w-full overflow-hidden bg-black sm:aspect-video">
+          <div className="relative aspect-4/3 w-full overflow-hidden bg-black sm:aspect-video">
             <Image
               src={project.image}
               alt={project.title}

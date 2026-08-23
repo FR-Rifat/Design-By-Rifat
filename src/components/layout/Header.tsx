@@ -183,7 +183,7 @@ function ButtonLink({ href, onMobileClick }: { href: string; onMobileClick?: () 
 
   return (
     <Button href={pathname === "/" ? href : `/${href}`} variant="primary" className="w-full text-center hover:translate-y-0 md:w-auto" onClick={handleClick}>
-      Contact Me
+      Book a Call
     </Button>
   );
 }

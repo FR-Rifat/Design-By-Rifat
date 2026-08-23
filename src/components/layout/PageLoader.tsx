@@ -13,6 +13,7 @@ function PageLoaderContent() {
 
   // Start in "covered" state for initial page load
   const [status, setStatus] = useState<TransitionStatus>("covered");
+  const [progress, setProgress] = useState(0);
   const pendingUrlRef = useRef<string>("");
   const closingTimerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -41,40 +42,54 @@ function PageLoaderContent() {
     document.body.scrollTop = 0;
   };
 
-  // 1. Initial Page Load Handler: Scroll to top / hash while covered & open shutter
+  // Initial Scroll Position on mount
   useEffect(() => {
     scrollToPosition();
-
-    const timer = setTimeout(() => {
-      setStatus("opening");
-      const idleTimer = setTimeout(() => {
-        setStatus("idle");
-      }, 350);
-      return () => clearTimeout(idleTimer);
-    }, 400);
-
-    return () => clearTimeout(timer);
   }, []);
 
-  // 2. Route Change Detection: Scroll to hash/top while covered before opening
+  // Smooth 0% to 100% Progress Count-up when covered
+  useEffect(() => {
+    if (status === "covered") {
+      setProgress(0);
+      const startTime = performance.now();
+      const duration = 450; // smooth 450ms loading progress
+
+      let animationFrameId: number;
+
+      const animate = (now: number) => {
+        const elapsed = now - startTime;
+        const pct = Math.min(100, Math.round((elapsed / duration) * 100));
+        setProgress(pct);
+
+        if (pct < 100) {
+          animationFrameId = requestAnimationFrame(animate);
+        } else {
+          // Once 100% is reached, wait briefly then trigger top/bottom reveal transition
+          setTimeout(() => {
+            setStatus("opening");
+            setTimeout(() => {
+              setStatus("idle");
+            }, 350);
+          }, 80);
+        }
+      };
+
+      animationFrameId = requestAnimationFrame(animate);
+
+      return () => {
+        cancelAnimationFrame(animationFrameId);
+      };
+    }
+  }, [status]);
+
+  // Route Change Detection: Scroll to hash/top while covered
   useEffect(() => {
     if (status === "closing" || status === "covered") {
       scrollToPosition(pendingUrlRef.current);
-
-      const impactTimer = setTimeout(() => {
-        scrollToPosition(pendingUrlRef.current);
-        setStatus("opening");
-        const openTimer = setTimeout(() => {
-          setStatus("idle");
-        }, 350);
-        return () => clearTimeout(openTimer);
-      }, 250);
-
-      return () => clearTimeout(impactTimer);
     }
-  }, [pathname, searchParams]);
+  }, [pathname, searchParams, status]);
 
-  // 3. Browser Back/Forward (popstate) Handler
+  // Browser Back/Forward (popstate) Handler
   useEffect(() => {
     const handlePopState = () => {
       setStatus("closing");
@@ -88,7 +103,7 @@ function PageLoaderContent() {
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
-  // 4. Global Link Click Interceptor for Split Shutter Closing Animation
+  // Global Link Click Interceptor for Split Shutter Closing Animation
   useEffect(() => {
     const handleLinkClick = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest("a");
@@ -114,7 +129,7 @@ function PageLoaderContent() {
         const currentUrl = new URL(window.location.href);
         const targetUrl = new URL(href, window.location.href);
 
-        // Ignore same page anchor navigation (e.g. /#works or #works when already on /)
+        // Ignore same page anchor navigation
         if (
           targetUrl.pathname === currentUrl.pathname &&
           targetUrl.search === currentUrl.search &&
@@ -141,10 +156,9 @@ function PageLoaderContent() {
 
         if (closingTimerRef.current) clearTimeout(closingTimerRef.current);
         closingTimerRef.current = setTimeout(() => {
-          // Step 2: Screen 100% covered - Scroll to target section & trigger route push
+          // Step 2: Screen covered - trigger route push
           setStatus("covered");
           scrollToPosition(fullTargetPath);
-
           router.push(fullTargetPath);
         }, 350);
       } catch {
@@ -199,93 +213,29 @@ function PageLoaderContent() {
             <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-linear-to-r from-transparent via-white/20 to-transparent" />
           </motion.div>
 
-          {/* Horizontal Center Laser Glow Line */}
+          {/* MAIN CENTER: Soft-Glass Circle with 01–100 Number Counter */}
           <AnimatePresence>
             {(status === "closing" || status === "covered") && (
               <motion.div
-                key="center-line"
-                initial={{ scaleX: 0, opacity: 0 }}
-                animate={{ scaleX: 1, opacity: 1 }}
-                exit={{ scaleX: 0, opacity: 0 }}
-                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute top-1/2 left-0 right-0 h-[1px] -translate-y-1/2 bg-linear-to-r from-transparent via-white/40 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.4)] z-[100000] pointer-events-none"
-              />
-            )}
-          </AnimatePresence>
-
-          {/* MAIN CENTER: Orbit, "01", Name, Divider, Subtitle */}
-          <AnimatePresence>
-            {(status === "closing" || status === "covered") && (
-              <motion.div
-                key="center-branding"
-                initial={{ opacity: 0, scale: 0.95 }}
+                key="center-counter"
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{
                   opacity: 0,
-                  scale: 0.95,
+                  scale: 0.9,
                   transition: { duration: 0.2, ease: "easeIn" },
                 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute inset-0 z-[100001] flex flex-col items-center justify-center pointer-events-none px-4"
               >
-                {/* Soft Radial Ambient Glow */}
-                <div className="absolute h-96 w-96 rounded-full bg-linear-to-tr from-white/10 via-white/5 to-transparent blur-3xl" />
+                {/* Soft Ambient Radial Glow */}
+                <div className="absolute size-44 rounded-full bg-white/5 blur-2xl pointer-events-none" />
 
-                {/* Central Composition Wrapper */}
-                <div className="relative flex flex-col items-center text-center">
-                  {/* 1. Orbit Ring & "01" Number */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.05 }}
-                    className="relative mb-5 flex items-center justify-center"
-                  >
-                    {/* Outer Rotating Subtle Dotted Orbit */}
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{
-                        duration: 18,
-                        repeat: Infinity,
-                        ease: "linear",
-                      }}
-                      className="absolute size-20 rounded-full border border-dashed border-white/20"
-                    />
-
-                    {/* Inner Glass Circle */}
-                    <div className="flex size-16 items-center justify-center rounded-full border border-white/25 bg-[#070708]/80 shadow-[0_0_25px_rgba(255,255,255,0.06)] backdrop-blur-md">
-                      <span className="font-mono text-sm font-medium tracking-wider text-white/90">
-                        01
-                      </span>
-                    </div>
-                  </motion.div>
-
-                  {/* 2. Name "FR RIFAT" */}
-                  <motion.h2
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.35, delay: 0.1 }}
-                    className="font-heading text-xl sm:text-2xl font-bold tracking-[0.35em] uppercase text-white"
-                  >
-                    FR RIFAT
-                  </motion.h2>
-
-                  {/* 3. Thin 1px Divider Line */}
-                  <motion.div
-                    initial={{ scaleX: 0, opacity: 0 }}
-                    animate={{ scaleX: 1, opacity: 1 }}
-                    transition={{ duration: 0.3, delay: 0.15 }}
-                    className="my-3 h-[1px] w-12 bg-white/25"
-                  />
-
-                  {/* 4. Subtitle "UX / UI DESIGNER" */}
-                  <motion.span
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.2 }}
-                    className="font-mono text-[11px] sm:text-xs font-semibold tracking-[0.4em] uppercase text-white/50"
-                  >
-                    UX / UI DESIGNER
-                  </motion.span>
+                {/* Dark Soft-Glass Circle with 01–100 Counter */}
+                <div className="relative flex size-20 items-center justify-center rounded-full border border-white/15 bg-[#070708]/80 shadow-[0_0_30px_rgba(255,255,255,0.08)] backdrop-blur-md">
+                  <span className="font-mono text-base font-bold tabular-nums tracking-wider text-white">
+                    {String(progress).padStart(2, "0")}%
+                  </span>
                 </div>
               </motion.div>
             )}

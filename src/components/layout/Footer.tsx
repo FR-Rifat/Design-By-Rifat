@@ -28,7 +28,7 @@ export function Footer() {
         {/* Navigation & Social Links - Refined Centered Linear Layout */}
         <div className="flex flex-col items-center justify-between gap-8 pb-4 sm:pb-10 border-b border-white/10 md:flex-row md:gap-6">
           {/* Quick Nav Links */}
-          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 sm:gap-x-8">
+          <nav className="hidden sm:flex flex-wrap items-center justify-center gap-x-6 gap-y-3 sm:gap-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
